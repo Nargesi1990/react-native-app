@@ -20,10 +20,7 @@ import {
     Tab,
     Tabs,
     ScrollableTab 
-
 } from 'native-base'
-
-
 import {
     AppRegistry,
     StyleSheet,
@@ -39,14 +36,10 @@ import {
     DrawerActions,
 } from 'react-navigation-drawer'
 
-
-
-import { TextInput } from 'react-native-gesture-handler';
-import { continueStatement } from '@babel/types';
-
 const { appStyle, homeStyle } = style
 import RNRestart from 'react-native-restart'; 
 const token = AsyncStorage.getItem('token');
+
 class get_nebenstelle extends Component {
     constructor(props) {
         super(props);
@@ -62,8 +55,7 @@ class get_nebenstelle extends Component {
             test_color: 'false',
             activate_nebenstelle: ''
         };
-    }
-     
+    } 
     componentDidMount() {
         this.get_nebenstellen() //  will first query all active extensions /Nebenstellen            
     }
@@ -124,7 +116,6 @@ class get_nebenstelle extends Component {
                 alert(JSON.stringify(error))
             });
     }
-
     deactivate = async (id, index) => { //the active extensions can be deactivated here
         const token = await AsyncStorage.getItem('token');
         const peer = {};
