@@ -27,7 +27,7 @@ import {
 } from 'native-base'
 import {
   DrawerActions,
-} from 'react-navigation'
+} from 'react-navigation-drawer'
 
 const { appStyle, homeStyle } = style
 

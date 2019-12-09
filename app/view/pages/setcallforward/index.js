@@ -10,7 +10,8 @@ import {
   TouchableOpacity,
   ScrollView,
   TextInput,
-
+  Platform,
+  KeyboardAvoidingView 
 } from 'react-native';
 import {
   Container,
@@ -24,8 +25,7 @@ import {
   Footer,
   Content,
   FooterTab,
-  Button
-
+  Button,
 } from 'native-base'
 import {
   DrawerActions,
@@ -134,6 +134,8 @@ class SetCallForward extends Component {
     const { isFocused } = this.state
     const { onFocus, onBlur } = this.props
     return (
+   <ScrollView>
+     <KeyboardAvoidingView keyboardVerticalOffset={-50} behavior="padding" style={{flex:1}}>   
       <Container style={appStyle.container}>
         <Header style={appStyle.header}>
           <Left>
@@ -187,6 +189,8 @@ class SetCallForward extends Component {
           </FooterTab>
         </Footer>
       </Container>
+      </KeyboardAvoidingView>
+     </ScrollView>   
     )
 
   }

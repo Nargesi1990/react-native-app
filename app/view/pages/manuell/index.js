@@ -10,7 +10,10 @@ import {
   TouchableOpacity,
   TextInput,
   Clipboard,
-  BackHandler  } from 'react-native';
+  BackHandler,
+  Platform,
+  ScrollView,
+  KeyboardAvoidingView } from 'react-native';
   import {
      Container , 
      Header ,
@@ -76,9 +79,7 @@ spin = async () => {
   this.setState({
     showIndicator: true
   })
-
 }
-
   onsSuccess = async () => { // login user
      const token = { data: this.state.nummber} //connect with Tetxtinput
     if (this.state.nummber === "") {
@@ -126,9 +127,9 @@ spin = async () => {
     const {onFocus , onBlur } = this.props
     
     return (
-
+    <ScrollView>
+      <KeyboardAvoidingView keyboardVerticalOffset={-50} behavior="padding" style={{flex:1}}> 
      <Container  style={appStyle.container}>
- 
       <Header style={ appStyle.header}>
           <Left>
               <Button transparent onPress={() => this.props.navigation.navigate('Home')}>
@@ -184,7 +185,8 @@ spin = async () => {
         </View> 
        
       </Container>
-   
+      </KeyboardAvoidingView>
+     </ScrollView> 
     );
   }
 }

@@ -1,6 +1,6 @@
-import {  createDrawerNavigator } from 'react-navigation-drawer'
-import {  createStackNavigator } from 'react-navigation-stack'
-import {  createAppContainer } from 'react-navigation'
+import { createDrawerNavigator } from 'react-navigation-drawer'
+import { createStackNavigator } from 'react-navigation-stack'
+import { createAppContainer } from 'react-navigation'
 
 import HomeScreen from 'view/pages/home'
 import splash from 'view/pages/splash'
@@ -15,32 +15,24 @@ import SetCallforward from 'view/pages/setcallforward'
 
 
 const MyDrawerNavigator = createDrawerNavigator({
- 
-  Spalsh:splash,
+  Spalsh: splash,
   Home: HomeScreen,
   Manuell_Input: Manuell_Input,
-  Qrcode : qrcode,
-  get_nebenstelle : get_nebenstelle ,
-  SetDnd : SetDnd,
-  SetCallforward : SetCallforward,
+  Qrcode: qrcode,
+  get_nebenstelle: get_nebenstelle,
+  SetDnd: SetDnd,
+  SetCallforward: SetCallforward,
   SetCallforwardTab: SetcallforwardTab,
-  SetDndExtra:SetDndExtra
+  SetDndExtra: SetDndExtra
 },
   {
-     contentComponent : CustumDrawer,
-     headerMode: 'none',
-     initialRouteName: 'Spalsh',
+    contentComponent: CustumDrawer,
+    headerMode: 'none',
+    initialRouteName: 'Spalsh',
   })
 const AppNavigator = createStackNavigator(
   {
     Home: HomeScreen,
-
-
-
   },
-  
-
 )
- 
-
 export default createAppContainer(MyDrawerNavigator)

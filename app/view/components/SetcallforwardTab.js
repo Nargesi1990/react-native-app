@@ -2,29 +2,17 @@ import React, { Component } from 'react';
 import style from 'view/style'
 
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
   TouchableOpacity,
   ScrollView,
   TextInput,
+  KeyboardAvoidingView
+} from 'react-native'
 
-} from 'react-native';
 import {
-  Container,
-  Header,
-  Left,
-  Right,
-  Body,
-  Title,
-  Icon,
-  Fab,
-  Footer,
-  Content,
-  FooterTab,
-  Button
-
+  Container
 } from 'native-base'
 
 import AsyncStorage from '@react-native-community/async-storage';
@@ -35,7 +23,6 @@ const LIGHT_GRAY = '#8d8d8b'
 class SetCallForward extends Component {
   static navigationOptions = {
     drawerLabel: 'Setcallforward'
-
   }
   constructor(props) {
     super(props);
@@ -44,7 +31,6 @@ class SetCallForward extends Component {
       data: '',
       isFocused: false
     };
-
   }
   componentDidMount(){
     this.get_callforward()
@@ -128,7 +114,8 @@ class SetCallForward extends Component {
     const { isFocused } = this.state
     const { onFocus, onBlur } = this.props
     return (
-
+   <ScrollView> 
+    <KeyboardAvoidingView>   
       <Container style={appStyle.container}>
       <Text style= {{paddingTop:12,fontWeight: '500',paddingLeft:7, color: '#141823',fontSize:18,  }}>
           die aktuelle Weiterleitung-Nummer :{this.state.data}
@@ -162,8 +149,9 @@ class SetCallForward extends Component {
             <Text style={styles.open} > Go Back</Text>
           </TouchableOpacity> */}
         </View>
-
-      </Container>
+       </Container>
+       </KeyboardAvoidingView>
+     </ScrollView>    
     )
 
   }
