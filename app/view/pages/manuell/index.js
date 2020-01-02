@@ -146,12 +146,13 @@ spin = async () => {
       </Header>
  
         <View style={appStyle.content_token}>
-          <View style={{flex:2 , margin:70,flexDirection: 'row', alignItems:'center'}}>
+          <View style={{flex:2 , margin:50,flexDirection: 'row', alignItems:'center'}}>
      
               <TextInput
                 dataDetectorTypes='phoneNumber'
                 editable
                 multiline
+                placeholderTextColor='grau'
                 selectionColor={'#f47621'}
                 value={this.state.nummber}
                 underlineColorAndroid={
@@ -223,10 +224,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   input_text: {
-    width: 300,
+    width: 250,
     height: 40,
-    paddingLeft:6,
-    alignItems: 'center'
+    margin:40,
+    alignItems: 'center',
+    borderBottomWidth: 2
    },
 
 

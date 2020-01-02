@@ -74,6 +74,7 @@ class get_nebenstelle extends Component {
             .then((response) => response.json())
             .then((responseJson) => {
                 this.setState({
+                    data:responseJson.data.userName,
                     content: Object.keys(responseJson.data.peer).map(
                         peer => responseJson.data.peer[peer])  // response send to flatlist
                 })
@@ -184,13 +185,15 @@ class get_nebenstelle extends Component {
                     <Tab heading="NebenStellen" activeTabStyle={appStyle.tabStyle} tabStyle={appStyle.headlineTab} >
                         <View style={appStyle.content}>
                             <View >
-                             <Text style={styles.txt}>{`Benutzer ${this.state.data.responseJson.status_message}`}</Text>   
-                             
+                                <Text style={styles.txt} > N : NebenStelle</Text>
+                             <Text style={styles.txt}>{`Benutzername ${this.state.data}`}</Text>   
+                                
                                 <FlatList data={this.state.content}  // here created our Button
                                     keyExtractor={(item, index) => index.toString()}
                                     renderItem={({ item , index}) =>
                                         <View style={styles.btn1}>
-                                            <Text style={{ paddingRight: 20 }}> Nummer : {item.peerName}</Text>
+                                            <Icon name='pint'/>
+                                            <Text> N : {item.peerName}</Text>
                                             {console.log('index', index , item.active)}
                                             <Button
                                                 style={item.active == 1 ? styles.on : styles.off }
@@ -198,19 +201,14 @@ class get_nebenstelle extends Component {
                                                     const state = { ...this.state };
                                                       const temp = state.content.map(field => {
                                                          if (field.peerId === item.peerId) {
-                                                            if (field.active == 1) {
-                                                               
+                                                            if (field.active == 1) { 
                                                                 console.log('field.peerId in deactivate' , field.peerId)
                                                                 this.deactivate(field.peerId, index);
-                                                          
                                                                field.active = 0
-                                                              //  item.active= 0
                                                             } else {
                                                                 console.log('field.peerId in activate' , field.peerId)
                                                                 this.activate(field.peerId , index );
                                                                field.active = 1
-                                                             // item.active=1
-
                                                             }
                                                          }
                                                         return field
@@ -218,7 +216,6 @@ class get_nebenstelle extends Component {
                                                     this.setState({ content: temp  });
                                                 }}>
                                                 <Text style={{ color: '#52524b' }} >{item.active == 0 ? 'Of' : 'On'}</Text>
-
                                             </Button>
                                         </View>
                                     }
@@ -272,8 +269,9 @@ const styles = StyleSheet.create({
     btn1: {
         flex: 1,
         alignItems: "center",
-        justifyContent: 'flex-start',
-        flexDirection: 'row'
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        width:260,
 
     },
     off: {

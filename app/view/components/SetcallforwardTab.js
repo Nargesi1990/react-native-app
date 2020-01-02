@@ -117,10 +117,10 @@ class SetCallForward extends Component {
    <ScrollView> 
     <KeyboardAvoidingView>   
       <Container style={appStyle.container}>
-      <Text style= {{paddingTop:12,fontWeight: '500',paddingLeft:7, color: '#141823',fontSize:18,  }}>
-          die aktuelle Weiterleitung-Nummer :{this.state.data}
+        <View style={{ paddingTop:25, alignContent:'center', alignItems:'center', alignSelf:'center', margin:10 }}> 
+      <Text style= {{paddingTop:12,fontWeight: '500',paddingLeft:7, color: '#141823',fontSize:18, marginBottom:25 }}>
+          Weiterleitungsnummer :{this.state.data}
      </Text>  
-        <View style={appStyle.content}>
           <TextInput
             dataDetectorTypes= 'phoneNumber'
             value={this.state.number}
@@ -138,17 +138,13 @@ class SetCallForward extends Component {
           >
           </TextInput>
           <TouchableOpacity
-            style={appStyle.btn}
+            style={appStyle.btn_fwd}
             onPress={(this.set_callforward)}>
             <Text style={homeStyle.textstyle}>
               Bestätigen
            </Text>
           </TouchableOpacity>
-
-    {/*       <TouchableOpacity underlayColor={'rgba(0,0,0.8)'} onPress={() => this.props.navigation.goBack()}>
-            <Text style={styles.open} > Go Back</Text>
-          </TouchableOpacity> */}
-        </View>
+          </View>
        </Container>
        </KeyboardAvoidingView>
      </ScrollView>    
@@ -173,11 +169,12 @@ const styles = StyleSheet.create({
   },
 
   input_text: {
-    width: 300,
-    height: 40,
+    width: 250,
+    height: 50,
     paddingLeft: 6,
     alignItems: 'center'
   },
+  
 });
 
 

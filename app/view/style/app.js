@@ -20,6 +20,16 @@ const styles = StyleSheet.create({
     margin: 20,
     
   },
+  content_fwd: {
+    borderColor:'#595555',
+    borderWidth:1,
+    alignItems: 'center',
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    
+    
+  },
   content_dnd: {
     alignItems: 'flex-start',
     flex: 2,
@@ -115,6 +125,18 @@ const styles = StyleSheet.create({
     height:40,
     alignItems:'center',
     justifyContent:'center'
+    
+  },
+  btn_fwd:{
+    backgroundColor:colors.btn_color, 
+    borderRadius: 5, 
+    marginTop:40,
+    padding: 5,
+    width:150,
+    height:40,
+    alignItems:'center',
+    justifyContent:'center',
+    alignContent:'center'
     
   },
   btn_token:{

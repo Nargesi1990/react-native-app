@@ -34,15 +34,18 @@ const styles = StyleSheet.create({
     alignItems:'center',
   },
   btn_home:{
-    backgroundColor:colors.btn_color, 
+    //backgroundColor:colors.btn_color, 
     borderRadius: 5, 
     marginTop:40,
     padding: 5,
     width:150,
     height:40,
     alignItems:'center',
-    justifyContent:'center'
-    
+    justifyContent:'center',
+    borderColor: '#22262b',
+    borderWidth:2,
+    elevation:5,
+    backgroundColor:'#ea6424'
   },
   btn_modal:{
     backgroundColor:colors.link, 

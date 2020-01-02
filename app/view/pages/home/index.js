@@ -43,19 +43,15 @@ const Home = (props) => {
     
   }
   
-     return  ( 
+     return ( 
     <Container style={appStyle.container}>
     
       <Header style={ appStyle.header}>
         <Left>
-          <Button
-           style={styles.touch}  transparent 
-           >
-            <Icon style={appStyle.headerIcon} />
-          </Button>
+        <Title>ansitTel</Title>
         </Left>
         <Body>
-          <Title>LOGIN</Title>
+          
         </Body>
         <Right>
           <Button transparent onPress={() => someAction('search!')}>
@@ -81,11 +77,8 @@ const Home = (props) => {
               <Text style={homeStyle.textstyle}>
                  login mit Textinput
               </Text>
-          </TouchableOpacity>
-       
-
+          </TouchableOpacity> 
           </View>
-     
     </Container>
   )
 }
